@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-# If you prefer the allow list template instead of the deny list, see community template:
-# https://github.com/github/gitignore/blob/main/community/Golang/Go.AllowList.gitignore
-#
-=======
->>>>>>> 3dc086f (first commit)
 # Binaries for programs and plugins
 *.exe
 *.exe~
@@ -25,8 +19,4 @@ go.work
 go.work.sum
 
 # env file
-<<<<<<< HEAD
 .env
-=======
-.env
->>>>>>> 3dc086f (first commit)
