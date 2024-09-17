@@ -14,12 +14,12 @@ import (
 )
 
 func main() {
-	fmt.Println("Hello, World!")
+	fmt.Println("=== PEAR S3-based CDN ===")
 
 	r := gin.Default()
 
 	r.GET("/", func(c *gin.Context) {
-		c.JSON(200, gin.H{"message": "Hello, World!"})
+		c.JSON(200, gin.H{"message": "CDN OK"})
 	})
 
 	accessKey := os.Getenv("MinIOAccessKey")
@@ -59,5 +59,5 @@ func main() {
 
 	})
 
-	r.Run()
+	r.Run(":3000")
 }
