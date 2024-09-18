@@ -25,12 +25,16 @@ func main() {
 	accessKey := os.Getenv("MinIOAccessKey")
 	secretKey := os.Getenv("MinIOSecretKey")
 	endpoint := os.Getenv("MinIOHost")
+	region := os.Getenv("MinIORegion")
 	useSSL := true
 
-	minioClient, err := minio.New(endpoint, &minio.Options{
+	minioOptions := &minio.Options{
 		Creds:  credentials.NewStaticV4(accessKey, secretKey, ""),
 		Secure: useSSL,
-	})
+		Region: region,
+	}
+
+	minioClient, err := minio.New(endpoint, minioOptions)
 	if err != nil {
 		log.Fatalln(err)
 	}
